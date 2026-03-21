@@ -5,6 +5,7 @@ This project currently includes:
 - a static UI for the quantity measurement screen
 - `db.json` for JSON Server
 - app initialization on page load
+- unit fetching by selected type in `js/api.js`
 
 ## Files
 
@@ -12,7 +13,7 @@ This project currently includes:
 - `css/styles.css` - custom styles
 - `db.json` - JSON Server data
 - `js/app.js` - current initialization logic
-- `js/api.js` - currently kept empty
+- `js/api.js` - fetches units by selected type
 - `js/conversion.js` - currently kept empty
 - `js/ui.js` - currently kept empty
 
@@ -26,9 +27,9 @@ npm run server
 
 Available endpoints:
 
-- `http://127.0.0.1:3000/units`
-- `http://127.0.0.1:3000/conversions`
-- `http://127.0.0.1:3000/history`
+- `http://localhost:3000/units`
+- `http://localhost:3000/conversions`
+- `http://localhost:3000/history`
 
 ## Run the UI
 

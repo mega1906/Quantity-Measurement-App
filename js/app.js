@@ -56,15 +56,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   async function loadUnits(type) {
-    const response = await fetch(
-      `http://127.0.0.1:3000/units?type=${encodeURIComponent(type.toLowerCase())}`
-    );
-
-    if (!response.ok) {
-      throw new Error("Failed to load units");
-    }
-
-    const units = await response.json();
+    const units = await getUnits(type);
     const [firstUnit, secondUnit] = units;
 
     state.fromUnit = firstUnit ? firstUnit.symbol : "";
@@ -75,7 +67,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   async function loadHistory() {
     try {
-      const response = await fetch("http://127.0.0.1:3000/history");
+      const response = await fetch("http://localhost:3000/history");
 
       if (!response.ok) {
         throw new Error("Failed to load history");
