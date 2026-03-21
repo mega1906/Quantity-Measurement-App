@@ -1,0 +1,223 @@
+:root {
+  --bg-main: #f6f1ea;
+  --bg-soft: #fffdf9;
+  --surface: rgba(255, 255, 255, 0.78);
+  --surface-strong: #ffffff;
+  --text-main: #2f241f;
+  --text-muted: #7e6d64;
+  --accent: #c96c4a;
+  --accent-dark: #9f4c31;
+  --accent-soft: #f4dfd3;
+  --line: rgba(97, 70, 58, 0.12);
+  --shadow: 0 22px 55px rgba(106, 72, 52, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Outfit", sans-serif;
+  color: var(--text-main);
+  background:
+    radial-gradient(circle at top left, rgba(201, 108, 74, 0.16), transparent 30%),
+    radial-gradient(circle at right center, rgba(224, 164, 129, 0.14), transparent 24%),
+    linear-gradient(180deg, #fffaf4 0%, var(--bg-main) 100%);
+}
+
+.page-shell {
+  min-height: 100vh;
+}
+
+.hero-banner {
+  background: linear-gradient(135deg, #5c2f1b 0%, #a94f33 52%, #db8b62 100%);
+  padding: 2.5rem 0 3rem;
+  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.hero-title {
+  margin: 0;
+  text-align: center;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  font-weight: 800;
+  color: #fff9f5;
+  letter-spacing: -0.03em;
+}
+
+.content-wrap {
+  max-width: 1100px;
+  margin-top: -0.75rem;
+  padding: 2.5rem 1rem 4rem;
+}
+
+.section-title {
+  margin: 0 0 1.4rem;
+  font-size: 1.05rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.choice-card {
+  height: 100%;
+  min-height: 210px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 28px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 250, 246, 0.88));
+  border: 1px solid transparent;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.choice-card-active {
+  border-color: var(--accent);
+  background: linear-gradient(180deg, #fff7f2 0%, #fde9de 100%);
+}
+
+.choice-icon {
+  font-size: 2.75rem;
+  line-height: 1;
+}
+
+.choice-label {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.action-pill {
+  min-height: 66px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.84);
+  box-shadow: var(--shadow);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.action-pill-active {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+  color: #fffaf6;
+}
+
+.input-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.panel-title {
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #1f1713;
+}
+
+.display-box,
+.select-box {
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.display-box {
+  min-height: 146px;
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+  border-radius: 24px 24px 0 0;
+}
+
+.display-value {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.select-box {
+  min-height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  border-top: 0;
+  border-radius: 0 0 24px 24px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #51433c;
+  position: relative;
+}
+
+.select-arrow {
+  color: #c0aba1;
+  font-size: 1.1rem;
+  pointer-events: none;
+}
+
+.unit-select {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  color: #51433c;
+  font-size: 1rem;
+  font-weight: 700;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 2rem;
+  cursor: pointer;
+}
+
+.unit-select:focus {
+  outline: none;
+}
+
+@media (max-width: 991px) {
+  .content-wrap {
+    padding-top: 2rem;
+  }
+
+  .choice-card {
+    min-height: 180px;
+  }
+
+  .display-box {
+    min-height: 130px;
+  }
+}
+
+@media (max-width: 575px) {
+  .hero-banner {
+    padding: 2rem 0 2.4rem;
+  }
+
+  .content-wrap {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .choice-card {
+    border-radius: 24px;
+  }
+
+  .display-box {
+    padding: 1.25rem;
+  }
+
+  .select-box {
+    padding: 0 1.25rem;
+  }
+}
