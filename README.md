@@ -1,27 +1,27 @@
 # Quantity Measurement App
 
-This project currently includes a static quantity measurement UI and a seeded `db.json` file for JSON Server.
+This project currently includes:
+
+- a static UI for the quantity measurement screen
+- `db.json` for JSON Server
+- app initialization on page load
 
 ## Files
 
-- `html/index.html` - main page
+- `html/index.html` - page markup and script loading
 - `css/styles.css` - custom styles
-- `db.json` - JSON Server database
-
-## Run the UI
-
-Open `html/index.html` in a browser.
+- `db.json` - JSON Server data
+- `js/app.js` - current initialization logic
+- `js/api.js` - currently kept empty
+- `js/conversion.js` - currently kept empty
+- `js/ui.js` - currently kept empty
 
 ## Run JSON Server
 
+From the project root:
+
 ```bash
 npm run server
-```
-
-or
-
-```bash
-json-server --watch db.json --port 3000
 ```
 
 Available endpoints:
@@ -29,3 +29,7 @@ Available endpoints:
 - `http://127.0.0.1:3000/units`
 - `http://127.0.0.1:3000/conversions`
 - `http://127.0.0.1:3000/history`
+
+## Run the UI
+
+Open `html/index.html` in a browser after starting JSON Server.
