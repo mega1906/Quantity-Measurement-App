@@ -6,6 +6,7 @@ This project currently includes:
 - `db.json` for JSON Server
 - app initialization on page load
 - unit fetching by selected type in `js/api.js`
+- conversion record fetching by unit pair in `js/api.js`
 
 ## Files
 
@@ -13,7 +14,7 @@ This project currently includes:
 - `css/styles.css` - custom styles
 - `db.json` - JSON Server data
 - `js/app.js` - current initialization logic
-- `js/api.js` - fetches units by selected type
+- `js/api.js` - fetches units and conversion records
 - `js/conversion.js` - currently kept empty
 - `js/ui.js` - currently kept empty
 
