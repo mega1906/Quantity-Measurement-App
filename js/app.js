@@ -15,15 +15,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     document.querySelectorAll(".type-card").forEach((card) => {
       card.addEventListener("click", async () => {
-        state.type = card.dataset.type;
-        setActive(typeGroup, card, ".type-card");
-
-        try {
-          await loadUnits(state.type);
-          showErrorBanner("");
-        } catch (error) {
-          handleServerError(error, "Failed to load units");
-        }
+        await handleTypeCardClick(card, typeGroup);
       });
     });
 
@@ -75,6 +67,37 @@ document.addEventListener("DOMContentLoaded", async () => {
     } catch (error) {
       renderHistory([]);
       handleServerError(error, "Server unavailable");
+    }
+  }
+
+  async function handleTypeCardClick(card, typeGroup) {
+    const fromValueEl = document.getElementById("from-value");
+    const toValueEl = document.getElementById("to-value");
+    const fromSelect = document.getElementById("from-unit");
+    const toSelect = document.getElementById("to-unit");
+
+    state.type = card.dataset.type;
+    setActive(typeGroup, card, ".type-card");
+
+    if (fromValueEl) {
+      fromValueEl.textContent = "";
+    }
+
+    if (toValueEl) {
+      toValueEl.textContent = "";
+    }
+
+    showResult(0, "");
+
+    try {
+      const units = await getUnits(state.type);
+      populateDropdown(fromSelect, units);
+      populateDropdown(toSelect, units);
+      state.fromUnit = "";
+      state.toUnit = "";
+      showErrorBanner("");
+    } catch (error) {
+      handleServerError(error, "Failed to load units");
     }
   }
 
@@ -132,6 +155,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.log("showResult available:", typeof showResult === "function");
     console.log("toggleOperators available:", typeof toggleOperators === "function");
     console.log("renderHistory available:", typeof renderHistory === "function");
+    console.log("type-card click wiring available:", typeof handleTypeCardClick === "function");
 
     try {
       const conversionResult = applyConversion(1, {
@@ -222,6 +246,15 @@ document.addEventListener("DOMContentLoaded", async () => {
       );
     } catch (error) {
       console.error("renderHistory test failed:", error.message);
+    }
+
+    try {
+      console.log("handleTypeCardClick sample result:", {
+        typeCards: document.querySelectorAll(".type-card").length,
+        defaultResultValue: document.querySelector("#result-value")?.textContent
+      });
+    } catch (error) {
+      console.error("handleTypeCardClick test failed:", error.message);
     }
   }
 
