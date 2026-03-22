@@ -94,28 +94,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   }
 
-  function renderHistory(historyItems) {
-    const historyList = document.getElementById("history-list");
-
-    if (!historyList) {
-      return;
-    }
-
-    if (!Array.isArray(historyItems) || historyItems.length === 0) {
-      historyList.innerHTML = '<li class="history-item history-empty">No history yet.</li>';
-      return;
-    }
-
-    historyList.innerHTML = historyItems
-      .map((item) => {
-        const summary =
-          item.summary ||
-          `${item.fromValue ?? ""} ${item.fromUnit ?? ""} -> ${item.toValue ?? ""} ${item.toUnit ?? ""}`;
-        return `<li class="history-item">${summary}</li>`;
-      })
-      .join("");
-  }
-
   function showErrorBanner(message) {
     const banner = document.getElementById("error-banner");
 
@@ -153,6 +131,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.log("setActive available:", typeof setActive === "function");
     console.log("showResult available:", typeof showResult === "function");
     console.log("toggleOperators available:", typeof toggleOperators === "function");
+    console.log("renderHistory available:", typeof renderHistory === "function");
 
     try {
       const conversionResult = applyConversion(1, {
@@ -227,6 +206,22 @@ document.addEventListener("DOMContentLoaded", async () => {
       console.log("toggleOperators sample result:", { shown, hidden });
     } catch (error) {
       console.error("toggleOperators test failed:", error.message);
+    }
+
+    try {
+      renderHistory([
+        {
+          expression: "1 km to m",
+          result: "1000",
+          timestamp: "2025-01-01T10:00:00.000Z"
+        }
+      ]);
+      console.log(
+        "renderHistory sample result:",
+        document.querySelector("#history-list")?.textContent?.trim()
+      );
+    } catch (error) {
+      console.error("renderHistory test failed:", error.message);
     }
   }
 
