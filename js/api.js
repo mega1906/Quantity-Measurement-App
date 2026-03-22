@@ -37,3 +37,18 @@ async function saveHistory(record) {
 
   return await res.json();
 }
+
+async function getHistory() {
+  try {
+    const res = await fetch(`${BASE_URL}/history?_sort=timestamp&_order=desc`);
+
+    if (!res.ok) {
+      throw new Error(`HTTP ${res.status}`);
+    }
+
+    return await res.json();
+  } catch (error) {
+    console.error("Failed to load history", error);
+    return [];
+  }
+}

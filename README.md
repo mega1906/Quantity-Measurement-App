@@ -8,6 +8,7 @@ This project currently includes:
 - unit fetching by selected type in `js/api.js`
 - conversion record fetching by unit pair in `js/api.js`
 - history save support in `js/api.js`
+- history loading support in `js/api.js`
 
 ## Files
 
@@ -15,7 +16,7 @@ This project currently includes:
 - `css/styles.css` - custom styles
 - `db.json` - JSON Server data
 - `js/app.js` - current initialization logic
-- `js/api.js` - fetches units, conversion records, and saves history
+- `js/api.js` - fetches units, conversion records, saves history, and loads history
 - `js/conversion.js` - currently kept empty
 - `js/ui.js` - currently kept empty
 

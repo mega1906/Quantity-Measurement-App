@@ -67,13 +67,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   async function loadHistory() {
     try {
-      const response = await fetch("http://localhost:3000/history");
-
-      if (!response.ok) {
-        throw new Error("Failed to load history");
-      }
-
-      const history = await response.json();
+      const history = await getHistory();
       renderHistory(history);
     } catch (error) {
       renderHistory([]);
