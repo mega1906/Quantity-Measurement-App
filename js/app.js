@@ -174,17 +174,33 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.log("getConversion available:", typeof getConversion === "function");
     console.log("saveHistory available:", typeof saveHistory === "function");
     console.log("getHistory available:", typeof getHistory === "function");
+    console.log("compareValues available:", typeof compareValues === "function");
+    console.log("performArithmetic available:", typeof performArithmetic === "function");
 
     try {
-      const sampleResult = applyConversion(1, {
+      const conversionResult = applyConversion(1, {
         from: "km",
         to: "m",
         factor: 1000,
         formula: null
       });
-      console.log("applyConversion sample result:", sampleResult);
+      console.log("applyConversion sample result:", conversionResult);
     } catch (error) {
       console.error("applyConversion test failed:", error.message);
+    }
+
+    try {
+      const comparisonResult = compareValues(5, "kg", 5000, "g", 5000, 5000);
+      console.log("compareValues sample result:", comparisonResult);
+    } catch (error) {
+      console.error("compareValues test failed:", error.message);
+    }
+
+    try {
+      const arithmeticResult = performArithmetic(5, 2, "+");
+      console.log("performArithmetic sample result:", arithmeticResult);
+    } catch (error) {
+      console.error("performArithmetic test failed:", error.message);
     }
   }
 

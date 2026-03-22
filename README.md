@@ -11,6 +11,7 @@ This project currently includes:
 - history loading support in `js/api.js`
 - basic conversion calculation support in `js/conversion.js`
 - comparison calculation support in `js/conversion.js`
+- arithmetic calculation support in `js/conversion.js`
 
 ## Files
 
@@ -19,7 +20,7 @@ This project currently includes:
 - `db.json` - JSON Server data
 - `js/app.js` - current initialization logic
 - `js/api.js` - fetches units, conversion records, saves history, and loads history
-- `js/conversion.js` - applies conversions and comparison logic
+- `js/conversion.js` - applies conversions, comparison, and arithmetic logic
 - `js/ui.js` - currently kept empty
 
 ## Run JSON Server

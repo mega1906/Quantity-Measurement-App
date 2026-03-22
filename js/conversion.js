@@ -39,3 +39,21 @@ function compareValues(v1, u1, v2, u2, base1, base2) {
 
   return `${v1} ${u1} is EQUAL to ${v2} ${u2}`;
 }
+
+function performArithmetic(v1, v2normalised, op) {
+  switch (op) {
+    case "+":
+      return parseFloat((v1 + v2normalised).toFixed(6));
+    case "-":
+      return parseFloat((v1 - v2normalised).toFixed(6));
+    case "*":
+      return parseFloat((v1 * v2normalised).toFixed(6));
+    case "/":
+      if (v2normalised === 0) {
+        throw new Error("Divide by zero");
+      }
+      return parseFloat((v1 / v2normalised).toFixed(6));
+    default:
+      throw new Error("Unknown operator");
+  }
+}
