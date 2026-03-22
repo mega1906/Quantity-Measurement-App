@@ -169,10 +169,30 @@ document.addEventListener("DOMContentLoaded", async () => {
     showErrorBanner(fallbackMessage || "Something went wrong");
   }
 
+  function logMethodChecks() {
+    console.log("getUnits available:", typeof getUnits === "function");
+    console.log("getConversion available:", typeof getConversion === "function");
+    console.log("saveHistory available:", typeof saveHistory === "function");
+    console.log("getHistory available:", typeof getHistory === "function");
+
+    try {
+      const sampleResult = applyConversion(1, {
+        from: "km",
+        to: "m",
+        factor: 1000,
+        formula: null
+      });
+      console.log("applyConversion sample result:", sampleResult);
+    } catch (error) {
+      console.error("applyConversion test failed:", error.message);
+    }
+  }
+
   attachEventListeners();
   setActiveTypeCard(state.type);
   setActiveActionButton(state.action);
   toggleOperators(false);
+  logMethodChecks();
 
   try {
     await loadUnits("Length");

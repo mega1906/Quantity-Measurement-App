@@ -9,6 +9,7 @@ This project currently includes:
 - conversion record fetching by unit pair in `js/api.js`
 - history save support in `js/api.js`
 - history loading support in `js/api.js`
+- basic conversion calculation support in `js/conversion.js`
 
 ## Files
 
@@ -17,7 +18,7 @@ This project currently includes:
 - `db.json` - JSON Server data
 - `js/app.js` - current initialization logic
 - `js/api.js` - fetches units, conversion records, saves history, and loads history
-- `js/conversion.js` - currently kept empty
+- `js/conversion.js` - applies factor/formula conversions
 - `js/ui.js` - currently kept empty
 
 ## Run JSON Server
