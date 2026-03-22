@@ -29,3 +29,22 @@ function setActive(parentEl, clickedEl, childSelector) {
   parentEl.querySelectorAll(childSelector).forEach((el) => el.classList.remove("active"));
   clickedEl.classList.add("active");
 }
+
+function showResult(value, unitSymbol) {
+  const resultValueEl = document.querySelector("#result-value");
+  const resultUnitEl = document.querySelector("#result-unit");
+  const resultPanelEl = document.querySelector("#result-panel");
+
+  if (!resultValueEl || !resultUnitEl || !resultPanelEl) {
+    return;
+  }
+
+  resultValueEl.textContent = value === null ? "—" : value;
+  resultUnitEl.textContent = unitSymbol || "";
+
+  resultPanelEl.classList.add("highlight");
+
+  setTimeout(() => {
+    resultPanelEl.classList.remove("highlight");
+  }, 1500);
+}

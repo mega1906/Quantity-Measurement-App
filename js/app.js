@@ -161,7 +161,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.log("performArithmetic available:", typeof performArithmetic === "function");
     console.log("populateDropdown available:", typeof populateDropdown === "function");
     console.log("setActive available:", typeof setActive === "function");
-    console.log("setActive available:", typeof setActive === "function");
+    console.log("showResult available:", typeof showResult === "function");
 
     try {
       const conversionResult = applyConversion(1, {
@@ -216,6 +216,16 @@ document.addEventListener("DOMContentLoaded", async () => {
       });
     } catch (error) {
       console.error("setActive test failed:", error.message);
+    }
+
+    try {
+      showResult("1000", "m");
+      console.log("showResult sample result:", {
+        value: document.querySelector("#result-value")?.textContent,
+        unit: document.querySelector("#result-unit")?.textContent
+      });
+    } catch (error) {
+      console.error("showResult test failed:", error.message);
     }
   }
 
