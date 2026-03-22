@@ -116,16 +116,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       .join("");
   }
 
-  function toggleOperators(show) {
-    const operatorRow = document.getElementById("operator-row");
-
-    if (!operatorRow) {
-      return;
-    }
-
-    operatorRow.classList.toggle("d-none", !show);
-  }
-
   function showErrorBanner(message) {
     const banner = document.getElementById("error-banner");
 
@@ -162,6 +152,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.log("populateDropdown available:", typeof populateDropdown === "function");
     console.log("setActive available:", typeof setActive === "function");
     console.log("showResult available:", typeof showResult === "function");
+    console.log("toggleOperators available:", typeof toggleOperators === "function");
 
     try {
       const conversionResult = applyConversion(1, {
@@ -226,6 +217,16 @@ document.addEventListener("DOMContentLoaded", async () => {
       });
     } catch (error) {
       console.error("showResult test failed:", error.message);
+    }
+
+    try {
+      toggleOperators(true);
+      const shown = document.querySelector("#operator-selector")?.style.display;
+      toggleOperators(false);
+      const hidden = document.querySelector("#operator-selector")?.style.display;
+      console.log("toggleOperators sample result:", { shown, hidden });
+    } catch (error) {
+      console.error("toggleOperators test failed:", error.message);
     }
   }
 

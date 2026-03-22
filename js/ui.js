@@ -48,3 +48,14 @@ function showResult(value, unitSymbol) {
     resultPanelEl.classList.remove("highlight");
   }, 1500);
 }
+
+function toggleOperators(show) {
+  const operatorSelectorEl = document.querySelector("#operator-selector");
+
+  if (!operatorSelectorEl) {
+    console.warn("toggleOperators could not find #operator-selector");
+    return;
+  }
+
+  operatorSelectorEl.style.display = show ? "flex" : "none";
+}

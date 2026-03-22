@@ -15,6 +15,7 @@ This project currently includes:
 - dropdown population support in `js/ui.js`
 - active-state UI support in `js/ui.js`
 - result panel update support in `js/ui.js`
+- operator row toggle support in `js/ui.js`
 
 ## Files
 
@@ -24,7 +25,7 @@ This project currently includes:
 - `js/app.js` - current initialization logic
 - `js/api.js` - fetches units, conversion records, saves history, and loads history
 - `js/conversion.js` - applies conversions, comparison, and arithmetic logic
-- `js/ui.js` - populates unit dropdowns, handles active states, and shows results
+- `js/ui.js` - populates unit dropdowns, handles active states, shows results, and toggles the operator row
 
 ## Run JSON Server
 
