@@ -10,10 +10,13 @@ document.addEventListener("DOMContentLoaded", async () => {
   };
 
   function attachEventListeners() {
+    const typeGroup = document.querySelector(".content-wrap section .row.g-4");
+    const actionGroup = document.querySelector(".content-wrap section .row.g-3");
+
     document.querySelectorAll(".type-card").forEach((card) => {
       card.addEventListener("click", async () => {
         state.type = card.dataset.type;
-        setActiveTypeCard(state.type);
+        setActive(typeGroup, card, ".type-card");
 
         try {
           await loadUnits(state.type);
@@ -27,7 +30,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     document.querySelectorAll(".action-button").forEach((button) => {
       button.addEventListener("click", () => {
         state.action = button.dataset.action;
-        setActiveActionButton(state.action);
+        setActive(actionGroup, button, ".action-button");
         toggleOperators(state.action === "Arithmetic");
       });
     });
@@ -113,18 +116,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       .join("");
   }
 
-  function setActiveTypeCard(activeType) {
-    document.querySelectorAll(".type-card").forEach((card) => {
-      card.classList.toggle("choice-card-active", card.dataset.type === activeType);
-    });
-  }
-
-  function setActiveActionButton(activeAction) {
-    document.querySelectorAll(".action-button").forEach((button) => {
-      button.classList.toggle("action-pill-active", button.dataset.action === activeAction);
-    });
-  }
-
   function toggleOperators(show) {
     const operatorRow = document.getElementById("operator-row");
 
@@ -169,6 +160,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.log("compareValues available:", typeof compareValues === "function");
     console.log("performArithmetic available:", typeof performArithmetic === "function");
     console.log("populateDropdown available:", typeof populateDropdown === "function");
+    console.log("setActive available:", typeof setActive === "function");
+    console.log("setActive available:", typeof setActive === "function");
 
     try {
       const conversionResult = applyConversion(1, {
@@ -206,11 +199,37 @@ document.addEventListener("DOMContentLoaded", async () => {
     } catch (error) {
       console.error("populateDropdown test failed:", error.message);
     }
+
+    try {
+      const parent = document.createElement("div");
+      const first = document.createElement("button");
+      const second = document.createElement("button");
+      first.className = "sample-btn active";
+      second.className = "sample-btn";
+      parent.appendChild(first);
+      parent.appendChild(second);
+
+      setActive(parent, second, ".sample-btn");
+      console.log("setActive sample result:", {
+        firstActive: first.classList.contains("active"),
+        secondActive: second.classList.contains("active")
+      });
+    } catch (error) {
+      console.error("setActive test failed:", error.message);
+    }
   }
 
   attachEventListeners();
-  setActiveTypeCard(state.type);
-  setActiveActionButton(state.action);
+  setActive(
+    document.querySelector(".content-wrap section .row.g-4"),
+    document.querySelector('.type-card[data-type="Length"]'),
+    ".type-card"
+  );
+  setActive(
+    document.querySelector(".content-wrap section .row.g-3"),
+    document.querySelector('.action-button[data-action="Conversion"]'),
+    ".action-button"
+  );
   toggleOperators(false);
   logMethodChecks();
 

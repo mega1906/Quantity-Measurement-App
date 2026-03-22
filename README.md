@@ -13,6 +13,7 @@ This project currently includes:
 - comparison calculation support in `js/conversion.js`
 - arithmetic calculation support in `js/conversion.js`
 - dropdown population support in `js/ui.js`
+- active-state UI support in `js/ui.js`
 
 ## Files
 
@@ -22,7 +23,7 @@ This project currently includes:
 - `js/app.js` - current initialization logic
 - `js/api.js` - fetches units, conversion records, saves history, and loads history
 - `js/conversion.js` - applies conversions, comparison, and arithmetic logic
-- `js/ui.js` - populates unit dropdowns
+- `js/ui.js` - populates unit dropdowns and handles active states
 
 ## Run JSON Server
 

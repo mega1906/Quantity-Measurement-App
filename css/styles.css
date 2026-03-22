@@ -81,6 +81,11 @@ body {
   background: linear-gradient(180deg, #fff7f2 0%, #fde9de 100%);
 }
 
+.type-card.active {
+  border-color: var(--accent);
+  background: linear-gradient(180deg, #fff7f2 0%, #fde9de 100%);
+}
+
 .choice-icon {
   font-size: 2.75rem;
   line-height: 1;
@@ -108,6 +113,11 @@ body {
 }
 
 .action-pill-active {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+  color: #fffaf6;
+}
+
+.action-button.active {
   background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
   color: #fffaf6;
 }
