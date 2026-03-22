@@ -72,13 +72,25 @@ function renderHistory(records) {
   list.innerHTML = "";
 
   if (!safeRecords.length) {
-    list.innerHTML = "<li>No history yet.</li>";
+    list.innerHTML = '<li class="history-item history-empty">No history yet.</li>';
     return;
   }
 
   safeRecords.forEach((r) => {
     const li = document.createElement("li");
-    li.textContent = `${r.expression}  =  ${r.result}  (${new Date(r.timestamp).toLocaleString()})`;
+    li.className = "history-item";
+    li.innerHTML = `
+      <div class="history-meta">
+        <span class="history-badge">${r.type || "Unknown"}</span>
+        <span class="history-badge history-badge-soft">${r.action || "Unknown"}</span>
+      </div>
+      <div class="history-expression">${r.expression || "No expression"}</div>
+      <div class="history-footer">
+        <span class="history-result">${r.result || "—"}</span>
+        <span class="history-time">${new Date(r.timestamp).toLocaleString()}</span>
+      </div>
+      <button type="button" class="history-delete-btn" data-history-id="${r.id}">Delete</button>
+    `;
     list.appendChild(li);
   });
 }

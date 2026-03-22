@@ -19,13 +19,15 @@ This project currently includes:
 - history list rendering support in `js/ui.js`
 - type-card click handling in `js/app.js`
 - action-tab click handling in `js/app.js`
+- calculation orchestration in `js/app.js`
 
 ## Files
 
 - `html/index.html` - page markup and script loading
 - `css/styles.css` - custom styles
 - `db.json` - JSON Server data
-- `js/app.js` - initialization logic with type-card and action-tab orchestration
+- `.vscode/settings.json` - Live Server ignore settings
+- `js/app.js` - initialization logic with type-card, action-tab, and calculation orchestration
 - `js/api.js` - fetches units, conversion records, saves history, and loads history
 - `js/conversion.js` - applies conversions, comparison, and arithmetic logic
 - `js/ui.js` - populates unit dropdowns, handles active states, shows results, toggles the operator row, and renders history

@@ -1,52 +1,487 @@
 {
   "units": [
-    { "id": 1, "type": "length", "label": "Kilometer", "symbol": "km" },
-    { "id": 2, "type": "length", "label": "Meter", "symbol": "m" },
-    { "id": 3, "type": "length", "label": "Centimeter", "symbol": "cm" },
-    { "id": 4, "type": "length", "label": "Millimeter", "symbol": "mm" },
-    { "id": 5, "type": "length", "label": "Mile", "symbol": "mi" },
-    { "id": 6, "type": "weight", "label": "Kilogram", "symbol": "kg" },
-    { "id": 7, "type": "weight", "label": "Gram", "symbol": "g" },
-    { "id": 8, "type": "weight", "label": "Milligram", "symbol": "mg" },
-    { "id": 9, "type": "weight", "label": "Pound", "symbol": "lb" },
-    { "id": 10, "type": "temperature", "label": "Celsius", "symbol": "C" },
-    { "id": 11, "type": "temperature", "label": "Fahrenheit", "symbol": "F" },
-    { "id": 12, "type": "temperature", "label": "Kelvin", "symbol": "K" },
-    { "id": 13, "type": "volume", "label": "Liter", "symbol": "L" },
-    { "id": 14, "type": "volume", "label": "Milliliter", "symbol": "mL" },
-    { "id": 15, "type": "volume", "label": "Gallon", "symbol": "gal" },
-    { "id": 16, "type": "volume", "label": "Cup", "symbol": "cup" }
+    {
+      "id": 1,
+      "type": "length",
+      "label": "Kilometer",
+      "symbol": "km"
+    },
+    {
+      "id": 2,
+      "type": "length",
+      "label": "Meter",
+      "symbol": "m"
+    },
+    {
+      "id": 3,
+      "type": "length",
+      "label": "Centimeter",
+      "symbol": "cm"
+    },
+    {
+      "id": 4,
+      "type": "length",
+      "label": "Millimeter",
+      "symbol": "mm"
+    },
+    {
+      "id": 5,
+      "type": "length",
+      "label": "Mile",
+      "symbol": "mi"
+    },
+    {
+      "id": 6,
+      "type": "weight",
+      "label": "Kilogram",
+      "symbol": "kg"
+    },
+    {
+      "id": 7,
+      "type": "weight",
+      "label": "Gram",
+      "symbol": "g"
+    },
+    {
+      "id": 8,
+      "type": "weight",
+      "label": "Milligram",
+      "symbol": "mg"
+    },
+    {
+      "id": 9,
+      "type": "weight",
+      "label": "Pound",
+      "symbol": "lb"
+    },
+    {
+      "id": 10,
+      "type": "temperature",
+      "label": "Celsius",
+      "symbol": "C"
+    },
+    {
+      "id": 11,
+      "type": "temperature",
+      "label": "Fahrenheit",
+      "symbol": "F"
+    },
+    {
+      "id": 12,
+      "type": "temperature",
+      "label": "Kelvin",
+      "symbol": "K"
+    },
+    {
+      "id": 13,
+      "type": "volume",
+      "label": "Liter",
+      "symbol": "L"
+    },
+    {
+      "id": 14,
+      "type": "volume",
+      "label": "Milliliter",
+      "symbol": "mL"
+    },
+    {
+      "id": 15,
+      "type": "volume",
+      "label": "Gallon",
+      "symbol": "gal"
+    },
+    {
+      "id": 16,
+      "type": "volume",
+      "label": "Cup",
+      "symbol": "cup"
+    }
   ],
   "conversions": [
-    { "id": 1, "from": "km", "to": "m", "factor": 1000, "formula": null },
-    { "id": 2, "from": "m", "to": "km", "factor": 0.001, "formula": null },
-    { "id": 3, "from": "m", "to": "cm", "factor": 100, "formula": null },
-    { "id": 4, "from": "cm", "to": "m", "factor": 0.01, "formula": null },
-    { "id": 5, "from": "cm", "to": "mm", "factor": 10, "formula": null },
-    { "id": 6, "from": "mm", "to": "cm", "factor": 0.1, "formula": null },
-    { "id": 7, "from": "mi", "to": "km", "factor": 1.60934, "formula": null },
-    { "id": 8, "from": "km", "to": "mi", "factor": 0.621371, "formula": null },
-
-    { "id": 9, "from": "kg", "to": "g", "factor": 1000, "formula": null },
-    { "id": 10, "from": "g", "to": "kg", "factor": 0.001, "formula": null },
-    { "id": 11, "from": "g", "to": "mg", "factor": 1000, "formula": null },
-    { "id": 12, "from": "mg", "to": "g", "factor": 0.001, "formula": null },
-    { "id": 13, "from": "kg", "to": "lb", "factor": 2.20462, "formula": null },
-    { "id": 14, "from": "lb", "to": "kg", "factor": 0.453592, "formula": null },
-
-    { "id": 15, "from": "C", "to": "F", "factor": null, "formula": "(x*9/5)+32" },
-    { "id": 16, "from": "F", "to": "C", "factor": null, "formula": "(x-32)*5/9" },
-    { "id": 17, "from": "C", "to": "K", "factor": null, "formula": "x+273.15" },
-    { "id": 18, "from": "K", "to": "C", "factor": null, "formula": "x-273.15" },
-    { "id": 19, "from": "F", "to": "K", "factor": null, "formula": "((x-32)*5/9)+273.15" },
-    { "id": 20, "from": "K", "to": "F", "factor": null, "formula": "((x-273.15)*9/5)+32" },
-
-    { "id": 21, "from": "L", "to": "mL", "factor": 1000, "formula": null },
-    { "id": 22, "from": "mL", "to": "L", "factor": 0.001, "formula": null },
-    { "id": 23, "from": "gal", "to": "L", "factor": 3.78541, "formula": null },
-    { "id": 24, "from": "L", "to": "gal", "factor": 0.264172, "formula": null },
-    { "id": 25, "from": "cup", "to": "mL", "factor": 236.588, "formula": null },
-    { "id": 26, "from": "mL", "to": "cup", "factor": 0.00422675, "formula": null }
+    {
+      "id": 1,
+      "from": "km",
+      "to": "m",
+      "factor": 1000,
+      "formula": null
+    },
+    {
+      "id": 2,
+      "from": "cm",
+      "to": "m",
+      "factor": 0.01,
+      "formula": null
+    },
+    {
+      "id": 3,
+      "from": "mm",
+      "to": "m",
+      "factor": 0.001,
+      "formula": null
+    },
+    {
+      "id": 4,
+      "from": "mi",
+      "to": "m",
+      "factor": 1609.34,
+      "formula": null
+    },
+    {
+      "id": 5,
+      "from": "m",
+      "to": "km",
+      "factor": 0.001,
+      "formula": null
+    },
+    {
+      "id": 6,
+      "from": "m",
+      "to": "cm",
+      "factor": 100,
+      "formula": null
+    },
+    {
+      "id": 7,
+      "from": "m",
+      "to": "mm",
+      "factor": 1000,
+      "formula": null
+    },
+    {
+      "id": 8,
+      "from": "m",
+      "to": "mi",
+      "factor": 0.000621371,
+      "formula": null
+    },
+    {
+      "id": 9,
+      "from": "kg",
+      "to": "g",
+      "factor": 1000,
+      "formula": null
+    },
+    {
+      "id": 10,
+      "from": "mg",
+      "to": "g",
+      "factor": 0.001,
+      "formula": null
+    },
+    {
+      "from": "lb",
+      "to": "g",
+      "factor": 453.592,
+      "formula": null
+    },
+    {
+      "id": 11,
+      "from": "g",
+      "to": "kg",
+      "factor": 0.001,
+      "formula": null
+    },
+    {
+      "id": 12,
+      "from": "g",
+      "to": "mg",
+      "factor": 1000,
+      "formula": null
+    },
+    {
+      "id": 13,
+      "from": "g",
+      "to": "lb",
+      "factor": 0.00220462,
+      "formula": null
+    },
+    {
+      "id": 14,
+      "from": "F",
+      "to": "C",
+      "factor": null,
+      "formula": "(x-32)*5/9"
+    },
+    {
+      "id": 15,
+      "from": "K",
+      "to": "C",
+      "factor": null,
+      "formula": "x-273.15"
+    },
+    {
+      "id": 16,
+      "from": "C",
+      "to": "F",
+      "factor": null,
+      "formula": "(x*9/5)+32"
+    },
+    {
+      "id": 17,
+      "from": "C",
+      "to": "K",
+      "factor": null,
+      "formula": "x+273.15"
+    },
+    {
+      "id": 18,
+      "from": "L",
+      "to": "mL",
+      "factor": 1000,
+      "formula": null
+    },
+    {
+      "id": 19,
+      "from": "gal",
+      "to": "mL",
+      "factor": 3785.41,
+      "formula": null
+    },
+    {
+      "id": 20,
+      "from": "cup",
+      "to": "mL",
+      "factor": 236.588,
+      "formula": null
+    },
+    {
+      "id": 21,
+      "from": "mL",
+      "to": "L",
+      "factor": 0.001,
+      "formula": null
+    },
+    {
+      "id": 22,
+      "from": "mL",
+      "to": "gal",
+      "factor": 0.000264172,
+      "formula": null
+    },
+    {
+      "id": 23,
+      "from": "mL",
+      "to": "cup",
+      "factor": 0.00422675,
+      "formula": null
+    }
   ],
-  "history": []
+  "history": [
+    {
+      "type": "Length",
+      "action": "Comparison",
+      "expression": "2km vs 1m",
+      "result": "2 km is GREATER than 1 m",
+      "timestamp": "2026-03-22T10:06:09.820Z",
+      "id": 1
+    },
+    {
+      "type": "Length",
+      "action": "Arithmetic",
+      "expression": "0 km + 1 m",
+      "result": "0.001 km",
+      "timestamp": "2026-03-22T10:06:12.959Z",
+      "id": 2
+    },
+    {
+      "type": "Length",
+      "action": "Arithmetic",
+      "expression": "2 km + 1 m",
+      "result": "2.001 km",
+      "timestamp": "2026-03-22T10:06:15.036Z",
+      "id": 3
+    },
+    {
+      "type": "Length",
+      "action": "Conversion",
+      "expression": "5 km to m",
+      "result": "5000",
+      "timestamp": "2026-03-22T10:06:20.388Z",
+      "id": 4
+    },
+    {
+      "type": "Length",
+      "action": "Comparison",
+      "expression": "2km vs 1m",
+      "result": "2 km is GREATER than 1 m",
+      "timestamp": "2026-03-22T10:08:42.488Z",
+      "id": 5
+    },
+    {
+      "type": "Length",
+      "action": "Conversion",
+      "expression": "2 km to m",
+      "result": "2000",
+      "timestamp": "2026-03-22T10:08:48.504Z",
+      "id": 6
+    },
+    {
+      "type": "Length",
+      "action": "Arithmetic",
+      "expression": "6 km + 1 m",
+      "result": "6.001 km",
+      "timestamp": "2026-03-22T10:08:54.045Z",
+      "id": 7
+    },
+    {
+      "type": "Length",
+      "action": "Comparison",
+      "expression": "2km vs 1m",
+      "result": "2 km is GREATER than 1 m",
+      "timestamp": "2026-03-22T10:11:35.605Z",
+      "id": 8
+    },
+    {
+      "type": "Length",
+      "action": "Comparison",
+      "expression": "2km vs 1m",
+      "result": "2 km is GREATER than 1 m",
+      "timestamp": "2026-03-22T10:11:42.136Z",
+      "id": 9
+    },
+    {
+      "type": "Length",
+      "action": "Arithmetic",
+      "expression": "2 km + 1 m",
+      "result": "2.001 km",
+      "timestamp": "2026-03-22T10:11:45.771Z",
+      "id": 10
+    },
+    {
+      "type": "Length",
+      "action": "Conversion",
+      "expression": "2 km to m",
+      "result": "2000",
+      "timestamp": "2026-03-22T10:11:47.956Z",
+      "id": 11
+    },
+    {
+      "type": "Length",
+      "action": "Comparison",
+      "expression": "2km vs 5m",
+      "result": "2 km is GREATER than 5 m",
+      "timestamp": "2026-03-22T10:14:27.095Z",
+      "id": 12
+    },
+    {
+      "type": "Length",
+      "action": "Conversion",
+      "expression": "2 km to m",
+      "result": "2000",
+      "timestamp": "2026-03-22T10:19:19.861Z",
+      "id": 13
+    },
+    {
+      "type": "Volume",
+      "action": "Arithmetic",
+      "expression": "5 L + 4000 mL",
+      "result": "9 L",
+      "timestamp": "2026-03-22T10:20:38.789Z",
+      "id": 14
+    },
+    {
+      "type": "Volume",
+      "action": "Comparison",
+      "expression": "5L vs 10mL",
+      "result": "5 L is GREATER than 10 mL",
+      "timestamp": "2026-03-22T10:20:50.735Z",
+      "id": 15
+    },
+    {
+      "type": "Volume",
+      "action": "Conversion",
+      "expression": "4 L to mL",
+      "result": "4000",
+      "timestamp": "2026-03-22T10:20:56.300Z",
+      "id": 16
+    },
+    {
+      "type": "Temperature",
+      "action": "Conversion",
+      "expression": "5 C to F",
+      "result": "41",
+      "timestamp": "2026-03-22T10:21:02.838Z",
+      "id": 17
+    },
+    {
+      "type": "Temperature",
+      "action": "Conversion",
+      "expression": "42 C to F",
+      "result": "107.6",
+      "timestamp": "2026-03-22T10:21:12.419Z",
+      "id": 18
+    },
+    {
+      "type": "Temperature",
+      "action": "Conversion",
+      "expression": "40 C to F",
+      "result": "104",
+      "timestamp": "2026-03-22T10:21:16.249Z",
+      "id": 19
+    },
+    {
+      "type": "Weight",
+      "action": "Conversion",
+      "expression": "2 kg to g",
+      "result": "2000",
+      "timestamp": "2026-03-22T12:34:29.580Z",
+      "id": 20
+    },
+    {
+      "type": "Weight",
+      "action": "Conversion",
+      "expression": "1 lb to kg",
+      "result": "0.453592",
+      "timestamp": "2026-03-22T12:34:44.428Z",
+      "id": 21
+    },
+    {
+      "type": "Weight",
+      "action": "Arithmetic",
+      "expression": "2 lb + 0.453592 g",
+      "result": "2.001001 lb",
+      "timestamp": "2026-03-22T12:35:02.184Z",
+      "id": 22
+    },
+    {
+      "type": "Weight",
+      "action": "Comparison",
+      "expression": "1lb vs 0.453592mg",
+      "result": "1 lb is GREATER than 0.453592 mg",
+      "timestamp": "2026-03-22T12:35:25.540Z",
+      "id": 23
+    },
+    {
+      "type": "Weight",
+      "action": "Arithmetic",
+      "expression": "2 lb + 0.453592 mg",
+      "result": "2 lb",
+      "timestamp": "2026-03-22T12:35:29.918Z",
+      "id": 24
+    },
+    {
+      "type": "Weight",
+      "action": "Arithmetic",
+      "expression": "2 lb + 2 mg",
+      "result": "2.000004 lb",
+      "timestamp": "2026-03-22T12:35:34.864Z",
+      "id": 25
+    },
+    {
+      "type": "Volume",
+      "action": "Conversion",
+      "expression": "3 mL to L",
+      "result": "0.003",
+      "timestamp": "2026-03-22T15:15:52.037Z",
+      "id": 26
+    },
+    {
+      "type": "Length",
+      "action": "Conversion",
+      "expression": "2 km to m",
+      "result": "2000",
+      "timestamp": "2026-03-22T15:16:01.424Z",
+      "id": 27
+    }
+  ]
 }

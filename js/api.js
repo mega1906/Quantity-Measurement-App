@@ -52,3 +52,13 @@ async function getHistory() {
     return [];
   }
 }
+
+async function deleteHistory(id) {
+  const res = await fetch(`${BASE_URL}/history/${id}`, {
+    method: "DELETE"
+  });
+
+  if (!res.ok) {
+    throw new Error(`HTTP ${res.status}`);
+  }
+}

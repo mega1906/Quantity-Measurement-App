@@ -152,11 +152,61 @@ body {
   border-radius: 24px 24px 0 0;
 }
 
-.display-value {
+.display-value,
+.display-input {
   font-size: clamp(2.5rem, 6vw, 4rem);
   font-weight: 800;
   line-height: 1;
   letter-spacing: -0.04em;
+}
+
+.display-field-wrap {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.display-input {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  color: var(--text-main);
+  padding: 0;
+}
+
+.display-input:focus {
+  outline: none;
+}
+
+.display-input::-webkit-outer-spin-button,
+.display-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.display-input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.input-stepper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.stepper-btn {
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: var(--shadow);
+  color: var(--accent-dark);
+  font-size: 1.2rem;
+  font-weight: 800;
+  line-height: 1;
 }
 
 .select-box {
@@ -311,10 +361,74 @@ body {
   box-shadow: var(--shadow);
   color: #51433c;
   font-weight: 600;
+  display: grid;
+  gap: 0.7rem;
 }
 
 .history-empty {
   color: var(--text-muted);
+}
+
+.history-meta {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.history-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 0 0.75rem;
+  border-radius: 999px;
+  background: rgba(201, 108, 74, 0.14);
+  color: var(--accent-dark);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.history-badge-soft {
+  background: rgba(97, 70, 58, 0.08);
+  color: var(--text-muted);
+}
+
+.history-expression {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.history-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.history-result {
+  color: var(--accent-dark);
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.history-time {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+}
+
+.history-delete-btn {
+  justify-self: start;
+  min-height: 40px;
+  padding: 0 0.95rem;
+  border: 1px solid rgba(159, 76, 49, 0.18);
+  border-radius: 12px;
+  background: rgba(255, 240, 234, 0.92);
+  color: #9f4c31;
+  font-size: 0.92rem;
+  font-weight: 700;
 }
 
 @media (max-width: 991px) {
