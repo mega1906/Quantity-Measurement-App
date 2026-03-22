@@ -18,13 +18,14 @@ This project currently includes:
 - operator row toggle support in `js/ui.js`
 - history list rendering support in `js/ui.js`
 - type-card click handling in `js/app.js`
+- action-tab click handling in `js/app.js`
 
 ## Files
 
 - `html/index.html` - page markup and script loading
 - `css/styles.css` - custom styles
 - `db.json` - JSON Server data
-- `js/app.js` - initialization logic and type-card orchestration
+- `js/app.js` - initialization logic with type-card and action-tab orchestration
 - `js/api.js` - fetches units, conversion records, saves history, and loads history
 - `js/conversion.js` - applies conversions, comparison, and arithmetic logic
 - `js/ui.js` - populates unit dropdowns, handles active states, shows results, toggles the operator row, and renders history

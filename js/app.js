@@ -21,9 +21,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     document.querySelectorAll(".action-button").forEach((button) => {
       button.addEventListener("click", () => {
-        state.action = button.dataset.action;
-        setActive(actionGroup, button, ".action-button");
-        toggleOperators(state.action === "Arithmetic");
+        handleActionTabClick(button, actionGroup);
       });
     });
 
@@ -101,6 +99,13 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   }
 
+  function handleActionTabClick(button, actionGroup) {
+    state.action = button.dataset.action;
+    setActive(actionGroup, button, ".action-btn");
+    toggleOperators(state.action === "Arithmetic");
+    showResult(0, "");
+  }
+
   function populateUnitDropdowns(units, selectedFrom, selectedTo) {
     const fromSelect = document.getElementById("from-unit");
     const toSelect = document.getElementById("to-unit");
@@ -156,6 +161,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.log("toggleOperators available:", typeof toggleOperators === "function");
     console.log("renderHistory available:", typeof renderHistory === "function");
     console.log("type-card click wiring available:", typeof handleTypeCardClick === "function");
+    console.log("action-tab click wiring available:", typeof handleActionTabClick === "function");
 
     try {
       const conversionResult = applyConversion(1, {
@@ -256,6 +262,19 @@ document.addEventListener("DOMContentLoaded", async () => {
     } catch (error) {
       console.error("handleTypeCardClick test failed:", error.message);
     }
+
+    try {
+      const actionGroup = document.querySelector(".content-wrap section .row.g-3");
+      const arithmeticButton = document.querySelector('.action-btn[data-action="Arithmetic"]');
+      handleActionTabClick(arithmeticButton, actionGroup);
+      console.log("handleActionTabClick sample result:", {
+        action: state.action,
+        operatorDisplay: document.querySelector("#operator-selector")?.style.display,
+        resultValue: document.querySelector("#result-value")?.textContent
+      });
+    } catch (error) {
+      console.error("handleActionTabClick test failed:", error.message);
+    }
   }
 
   attachEventListeners();
@@ -266,8 +285,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   );
   setActive(
     document.querySelector(".content-wrap section .row.g-3"),
-    document.querySelector('.action-button[data-action="Conversion"]'),
-    ".action-button"
+    document.querySelector('.action-btn[data-action="Conversion"]'),
+    ".action-btn"
   );
   toggleOperators(false);
   logMethodChecks();
