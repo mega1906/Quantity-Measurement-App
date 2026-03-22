@@ -79,16 +79,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     const fromSelect = document.getElementById("from-unit");
     const toSelect = document.getElementById("to-unit");
 
-    if (!fromSelect || !toSelect) {
-      return;
-    }
-
-    const optionsMarkup = units
-      .map((unit) => `<option value="${unit.symbol}">${unit.label} (${unit.symbol})</option>`)
-      .join("");
-
-    fromSelect.innerHTML = optionsMarkup;
-    toSelect.innerHTML = optionsMarkup;
+    populateDropdown(fromSelect, units);
+    populateDropdown(toSelect, units);
 
     if (selectedFrom) {
       fromSelect.value = selectedFrom;
@@ -176,6 +168,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.log("getHistory available:", typeof getHistory === "function");
     console.log("compareValues available:", typeof compareValues === "function");
     console.log("performArithmetic available:", typeof performArithmetic === "function");
+    console.log("populateDropdown available:", typeof populateDropdown === "function");
 
     try {
       const conversionResult = applyConversion(1, {
@@ -201,6 +194,17 @@ document.addEventListener("DOMContentLoaded", async () => {
       console.log("performArithmetic sample result:", arithmeticResult);
     } catch (error) {
       console.error("performArithmetic test failed:", error.message);
+    }
+
+    try {
+      const tempSelect = document.createElement("select");
+      populateDropdown(tempSelect, [
+        { label: "Kilometer", symbol: "km" },
+        { label: "Meter", symbol: "m" }
+      ]);
+      console.log("populateDropdown sample result:", tempSelect.innerHTML);
+    } catch (error) {
+      console.error("populateDropdown test failed:", error.message);
     }
   }
 
